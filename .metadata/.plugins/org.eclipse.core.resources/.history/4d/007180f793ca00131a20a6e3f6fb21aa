@@ -1,0 +1,9 @@
+'''
+Created on Apr 21, 2014
+
+@author: toantran
+'''
+
+from rest_framework import serializer
+
+class ProgramSerializer(serializer.Serializers):

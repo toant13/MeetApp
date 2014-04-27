@@ -1,0 +1,61 @@
+-- VERSION_3
+-- START DISKCACHE
+/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/WeeDeliverProject/com.python.pydev.analysis/v1_indexcache
+.v1_indexcache
+ProviderMenuApp.tests|0|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/tests.py
+ProviderMenuApp.admin|0|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/admin.py
+WeeDeliverProject.wsgi|0|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/WeeDeliverProject/wsgi.py
+WeeDeliverProject.__init__|0|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/WeeDeliverProject/__init__.py
+ProviderMenuApp.views|0|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/views.py
+WeeDeliverProject.settings|0|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/WeeDeliverProject/settings.py
+ProviderMenuApp.models|0|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/models.py
+ProviderMenuApp.__init__|0|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/__init__.py
+manage|0|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/manage.py
+WeeDeliverProject.urls|0|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/WeeDeliverProject/urls.py
+-- END DISKCACHE
+-- START DICTIONARY
+10
+5=MenuItem
+2=WeeDeliverProject.wsgi
+7=Store
+6=MenuCategory
+10=Store.Meta
+3=ProviderMenuApp.models
+1=WeeDeliverProject.settings
+4=WeeDeliverProject.urls
+8=MenuItem.Meta
+9=MenuCategory.Meta
+-- END DICTIONARY
+-- START TREE 1
+19
+all|1|ALLOWED_HOSTS!11@
+app|1|application!19@
+bas|1|BASE_DIR!11@
+dat|1|DATABASES!11@
+deb|1|DEBUG!11@
+gcm|1|GCM_APIKEY!11@
+ins|1|INSTALLED_APPS!11@
+lan|1|LANGUAGE_CODE!11@
+men|2|MenuItem!25@MenuCategory!25@
+mid|1|MIDDLEWARE_CLASSES!11@
+roo|1|ROOT_URLCONF!11@
+sec|1|SECRET_KEY!11@
+sta|1|STATIC_URL!11@
+sto|1|Store!25@
+tem|1|TEMPLATE_DEBUG!11@
+tim|1|TIME_ZONE!11@
+url|1|urlpatterns!35@
+use|3|USE_L10N!11@USE_TZ!11@USE_I18N!11@
+wsg|1|WSGI_APPLICATION!11@
+-- END TREE
+-- START TREE 2
+8
+__s|3|__str__!5&26@__str__!6&26@__str__!7&26@
+cat|2|categoryName!6&27@category!5&27@
+des|1|description!5&27@
+met|3|Meta!5&25@Meta!6&25@Meta!7&25@
+nam|1|name!5&27@
+ord|3|ordering!8&27@ordering!9&27@ordering!10&27@
+pri|1|price!5&27@
+sto|2|store!6&27@storeName!7&27@
+-- END TREE

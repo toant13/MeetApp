@@ -1,0 +1,12 @@
+'''
+Created on Apr 21, 2014
+
+@author: toantran
+'''
+
+from rest_framework import serializers
+
+class ProgramSerializer(serializers.Serializer):
+    pk = serializers.Field() 
+    title = serializers.CharField(required=False,
+                                  max_length=100)

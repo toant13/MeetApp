@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.example.meetapp.R.id"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="com.example.meetapp.R"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="android.provider.Settings"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="android.location.LocationManager"/>
+<fullyQualifiedTypeName name="android.location.Criteria"/>
+<fullyQualifiedTypeName name="android.location.Location"/>
+<fullyQualifiedTypeName name="com.example.meetapp.R.layout"/>
+<fullyQualifiedTypeName name="android.location.LocationListener"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="com.google.android.gms.gcm.GoogleCloudMessaging"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="com.example.weeddeliverstoreapp.R.id"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.content.SharedPreferences"/>
+<fullyQualifiedTypeName name="android.util.Config"/>
+<fullyQualifiedTypeName name="android.text.TextUtils"/>
+<fullyQualifiedTypeName name="com.google.android.gms.common.GooglePlayServicesUtil"/>
+<fullyQualifiedTypeName name="com.google.android.gms.common.ConnectionResult"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+</qualifiedTypeNameHistroy>

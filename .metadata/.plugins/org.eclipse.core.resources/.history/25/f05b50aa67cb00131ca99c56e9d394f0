@@ -1,0 +1,11 @@
+from django.contrib import admin
+from meetapp.models import Exercise, Program
+
+# Register your models here.
+
+class ExerciseAdmin(admin.ModelAdmin):
+    fields = ['name' , 'sets', 'reps']
+
+
+admin.site.register(Exercise, ExerciseAdmin)
+admin.site.register(Program)

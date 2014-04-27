@@ -1,0 +1,19 @@
+'''
+Created on Apr 21, 2014
+
+@author: toantran
+'''
+
+from rest_framework import serializers
+from meetapp.models import Program, Exercise
+
+class ExerciseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Exercise
+        fields = ('id', 'name', 'sets', 'reps')
+
+class ProgramSerializer(serializers.ModelSerializer):
+    exercises = ExerciseSerializer(many=True, required=False);
+    class Meta:
+        model = Program
+        fields = ('id', 'title', 'exercises')

@@ -1,0 +1,11 @@
+MODULES_MANAGER_V2
+ProviderMenuApp.__init__|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/__init__.py
+ProviderMenuApp.admin|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/admin.py
+ProviderMenuApp.models|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/models.py
+ProviderMenuApp.tests|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/tests.py
+ProviderMenuApp.views|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/views.py
+WeeDeliverProject.__init__|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/WeeDeliverProject/__init__.py
+WeeDeliverProject.settings|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/WeeDeliverProject/settings.py
+WeeDeliverProject.urls|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/WeeDeliverProject/urls.py
+WeeDeliverProject.wsgi|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/WeeDeliverProject/wsgi.py
+manage|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/manage.py
