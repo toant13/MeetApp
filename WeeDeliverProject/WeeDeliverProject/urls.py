@@ -7,6 +7,6 @@ urlpatterns = patterns('',
     # url(r'^$', 'WeeDeliverProject.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^gadmin/', include(admin.site.urls)),
     url(r'', include('gcm.urls')),
 )

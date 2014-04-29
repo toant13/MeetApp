@@ -1,4 +1,9 @@
 from django.db import models
+from gcm.models import AbstractDevice
+
+
+class MyDevice(AbstractDevice):
+    pass
 
 
 class Store (models.Model):

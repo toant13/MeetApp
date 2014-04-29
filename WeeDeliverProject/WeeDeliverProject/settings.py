@@ -40,7 +40,10 @@ INSTALLED_APPS = (
     'gcm',
 )
 
-GCM_APIKEY = "<AIzaSyAuSmpawGorpIBi6Y1GxtnW2ZZvIrkJi_8>"
+GCM_APIKEY = "AIzaSyAuSmpawGorpIBi6Y1GxtnW2ZZvIrkJi_8"
+
+GCM_DEVICE_MODEL = "ProviderMenuApp.models.MyDevice"
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
