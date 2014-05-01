@@ -37,12 +37,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ProviderMenuApp',
+    'rest_framework',
     'gcm',
 )
 
 GCM_APIKEY = "AIzaSyAuSmpawGorpIBi6Y1GxtnW2ZZvIrkJi_8"
 
-GCM_DEVICE_MODEL = "ProviderMenuApp.models.MyDevice"
+GCM_DEVICE_MODEL = "ProviderMenuApp.models.UserDevice"
 
 
 MIDDLEWARE_CLASSES = (

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import MenuItem, MenuCategory, Store, MyDevice
+from models import MenuItem, MenuCategory, Store
 # Register your models here.
 
 
@@ -7,4 +7,3 @@ from models import MenuItem, MenuCategory, Store, MyDevice
 admin.site.register(Store)
 admin.site.register(MenuCategory)
 admin.site.register(MenuItem)
-# admin.site.register(MyDevice)

@@ -2,8 +2,15 @@ from django.db import models
 from gcm.models import AbstractDevice
 
 
-class MyDevice(AbstractDevice):
-    pass
+class UserDevice(AbstractDevice):
+    username = models.CharField(max_length=20, blank=True, default='')
+    password = models.CharField(max_length=20, blank=True, default='')
+    
+    class Meta:
+        ordering = ('username',)
+    
+    def __str__(self):
+        return self.username
 
 
 class Store (models.Model):
