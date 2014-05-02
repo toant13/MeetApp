@@ -5,7 +5,71 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-04-30T14:25:00Z</updated>
+  <updated>2014-05-02T15:09:00Z</updated>
+  <entry>
+    <title>Spring Data release train Dijkstra RC1 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/05/02/spring-data-release-train-dijkstra-rc1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Oliver Gierke</name>
+    </author>
+    <id>tag:spring.io,2014-05-02:1551</id>
+    <updated>2014-05-02T15:09:00Z</updated>
+    <content type="html">&lt;p&gt;I am happy to announce the first release candidate of the next Spring Data release train named &lt;a href="http://en.wikipedia.org/wiki/Edsger_W._Dijkstra"&gt;Dijkstra&lt;/a&gt;. The full list of participating modules looks as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Spring Data Commons 1.8 RC1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-commons/1.8.0.RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.8.0.RC1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.8.0.RC1/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.8.0.RC1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data JPA 1.6 RC1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jpa/1.6.0.RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.6.0.RC1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.6.0.RC1/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.6.0.RC1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data MongoDB 1.5 RC1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-mongodb/1.5.0.RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.5.0.RC1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.5.0.RC1/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.5.0.RC1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Neo4j 3.1 RC1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-neo4j/3.1.0.RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.1.0.RC1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.1.0.RC1/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.1.0.RC1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Solr 1.2 RC1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-solr/1.2.0.RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.2.0.RC1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.2.0.RC1/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.2.0.RC1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Couchbase 1.1 RC1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-couchbase/1.1.0.RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/1.1.0.RC1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/1.1.0.RC1/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/1.1.0.RC1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Cassandra 1.0 RC1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-cassandra/1.0.0.RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.0.0.RC1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.0.0.RC1/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.0.0.RC1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Elasticsearch 1.0 RC1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-elasticsearch/1.0.0.RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/1.0.0.RC1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/1.0.0.RC1/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/1.0.0.RC1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Gemfire 1.4 RC1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-gemfire/1.4.0.RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.4.0.RC1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.4.0.RC1/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.4.0.RC1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Redis 1.3 RC1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-redis/1.3.0.RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.3.0.RC1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.3.0.RC1/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.3.0.RC1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data REST 2.1 RC1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-rest-webmvc/2.1.0.RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.1.0.RC1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.1.0.RC1/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.1.0.RC1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;We collected a &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Dijkstra"&gt;curated change log&lt;/a&gt; for the release in the Spring Data Commons wiki. We highly recommend to skim through it to get an impression of the new features for the modules you're using.&lt;/p&gt;
+
+&lt;p&gt;We're now approaching the home stretch to GA release which means we're going to focus on cleanup tasks like bug fixing, reference documentation, internal refactorings and code cleanups for the remaining two sprints. We're shooting for a final release at the end of May. Meanwhile, we're happy to get feedback in our &lt;a href="jira.springsource.org"&gt;JIRA&lt;/a&gt; or via &lt;a href="https://twitter.com/springdata"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you want to lear more about Spring Data, make sure you register for our annual &lt;a href="http://www.springone2gx.com"&gt;SpringOne conference&lt;/a&gt; taking place in Dallas, TX in early September. And while you're at it: Spring Boot is nominated as most innovative Java project for the JAX 2014 awards. Cast your &lt;a href="http://jax.de/awards2014/"&gt;vote&lt;/a&gt;!&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Framework 4.0.4 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/05/01/spring-framework-4-0-4-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Juergen Hoeller</name>
+    </author>
+    <id>tag:spring.io,2014-04-30:1550</id>
+    <updated>2014-05-01T08:44:00Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring community,&lt;/p&gt;
+
+&lt;p&gt;It's my pleasure to announce that Spring Framework 4.0.4 is now available. This is a straightforward maintenance release after 4.0.3, primarily fixing regressions and other recent bugs. It also comes with a range of minor dependency updates (including ASM 5.0.2).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-framework/"&gt;http://projects.spring.io/spring-framework/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Aside from working towards our 4.1 release in July, we intend to do a 4.0.5 &amp;amp; 3.2.9 pair of releases in late May. Both of the latter are the last planned releases in the respective line. So if you have any critical bug reports to consider for those branches still, please let us know - through creating new JIRA issues or through escalating existing JIRA issues...&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://jira.spring.io/browse/SPR/"&gt;https://jira.spring.io/browse/SPR/&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr&gt;&lt;p&gt;As a side note, Spring has also been nominated for a JAX Innovation award. If you've not done so already, please consider voting for Spring Boot at &lt;a href="http://jax.de/awards2014/"&gt;http://jax.de/awards2014/&lt;/a&gt;  &lt;/p&gt;
+
+&lt;p&gt;Cheers,&lt;br&gt;
+Juergen&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Integration 4.0 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2014/04/30/spring-integration-4-0-released" />
@@ -760,179 +824,6 @@ hand all that's going on and to provide direct feedback. Expect a number of sign
 &lt;p&gt;Learn more about  Spring at: &lt;a href="http://projects.spring.io/spring-framework"&gt;http://projects.spring.io/spring-framework&lt;/a&gt;&lt;/p&gt;
 
 &lt;iframe width="420" height="315" src="//www.youtube.com/embed/T7kLMrqNI9k" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>Second Service Release For Spring Data Release Train Codd Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/04/16/second-service-release-for-spring-data-release-train-codd-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Oliver Gierke</name>
-    </author>
-    <id>tag:spring.io,2014-04-16:1505</id>
-    <updated>2014-04-16T12:19:00Z</updated>
-    <content type="html">&lt;p&gt;I am happy to announce the second service release of the Spring Data release train named &lt;a href="http://en.wikipedia.org/wiki/Edgar_F._Codd"&gt;Codd&lt;/a&gt;. The full list of participating modules looks as follows:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Spring Data Commons 1.7.2 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/1.7.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.7.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.7.2.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.7.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;Spring Data JPA 1.5.2 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/1.5.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.5.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.5.2.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.5.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;Spring Data MongoDB 1.4.2 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/1.4.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.4.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.4.2.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.4.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;Spring Data Neo4j 3.0.2 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/3.0.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.0.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.0.2.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.0.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;Spring Data Solr 1.1.2 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/1.1.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.1.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.1.2.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.1.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;Spring Data REST 2.0.2 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/2.0.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.0.2.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.0.2.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.0.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;For this release we've squashed &lt;a href="https://jira.spring.io/issues/?filter=14646"&gt;37 tickets&lt;/a&gt;. As the release contains a few important bug fixes it is a recommended upgrade for all Codd users. Also, users of the previous release train Babbage are encouraged to upgrade.&lt;/p&gt;
-
-&lt;p&gt;The next release following in two week will be the first release candidate of our next release train called &lt;a href="http://en.wikipedia.org/wiki/Edsger_W._Dijkstra"&gt;Dijkstra&lt;/a&gt;. A preliminary schedule is available at the &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Dijkstra"&gt;wiki page&lt;/a&gt; for the release. We're currently in the planning phase and will happily consider the input you cast in JIRA tickets.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring MVC Test with Geb</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/04/15/spring-mvc-test-with-geb" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Rob Winch</name>
-    </author>
-    <id>tag:spring.io,2014-04-15:1504</id>
-    <updated>2014-04-15T22:23:00Z</updated>
-    <content type="html">&lt;p&gt;In my &lt;a href="https://spring.io/blog/2014/03/26/spring-mvc-test-with-webdriver"&gt;third post&lt;/a&gt; I discussed how to use &lt;a href="http://docs.seleniumhq.org/projects/webdriver/"&gt;WebDriver&lt;/a&gt; to make designing our tests easier with the Page Object Pattern. In this post, I'm going to discuss how to use &lt;a href="http://www.gebish.org/"&gt;Geb&lt;/a&gt; to make our testing with &lt;code&gt;MockMvc&lt;/code&gt; more Groovy.&lt;/p&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-why-geb-and-mockmvc" class="anchor" href="#why-geb-and-mockmvc"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Why Geb and MockMvc&lt;/h2&gt;
-
-&lt;p&gt;Geb is backed by WebDriver, so it offers many of the same benefits we got from WebDriver. However, Geb makes things even easier by taking care of some of the boiler plate code for us. Of course we want to use MockMvc so that we do no need to deploy our code to a server. The easiest way to understand the benefits of using Geb is to jump into an example.&lt;/p&gt;
-
-&lt;hr&gt;&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: Another great feature of Geb is its &lt;a href="http://www.gebish.org/manual/current/"&gt;exceptional documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;hr&gt;&lt;h2&gt;
-&lt;a name="user-content-updating-dependencies" class="anchor" href="#updating-dependencies"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Updating Dependencies&lt;/h2&gt;
-
-&lt;p&gt;Before you use the project, you must ensure to update your dependencies. Instructions for both &lt;a href="https://github.com/spring-projects/spring-test-mvc-htmlunit#building-with-maven"&gt;Maven&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-test-mvc-htmlunit#building-with-gradle"&gt;Gradle&lt;/a&gt; can be found on the site documentation.&lt;/p&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-using-geb" class="anchor" href="#using-geb"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Using Geb&lt;/h2&gt;
-
-&lt;p&gt;Now that we have the correct dependencies, we can use Geb in our unit tests. The complete code sample for using Geb and Spring MVC Test can be found in &lt;a href="https://github.com/spring-projects/spring-test-mvc-htmlunit/blob/master/mail-webapp/src/test/groovy/sample/geb/GebCreateMessagesSpec.groovy"&gt;GebCreateMessagesSpec&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3&gt;
-&lt;a name="user-content-creating-a-mockmvc-instance" class="anchor" href="#creating-a-mockmvc-instance"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Creating a MockMvc instance&lt;/h3&gt;
-
-&lt;p&gt;In order to use HtmlUnit and Spring MVC Test we must first create a &lt;code&gt;MockMvc&lt;/code&gt; instance. There is plenty of documentation on how to create a &lt;code&gt;MockMvc&lt;/code&gt; instance, but we will review how to create a &lt;code&gt;MockMvc&lt;/code&gt; instance very quickly in this section.&lt;/p&gt;
-
-&lt;p&gt;The first step is to create a new &lt;code&gt;GebReportingSpec&lt;/code&gt; class that is annotated as shown below:&lt;/p&gt;
-
-&lt;div class="highlight highlight-groovy"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@ContextConfiguration&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;classes&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;WebMvcConfig&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="n"&gt;MockDataConfig&lt;/span&gt;&lt;span class="o"&gt;])&lt;/span&gt;
-&lt;span class="nd"&gt;@WebAppConfiguration&lt;/span&gt;
-&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;GebCreateMessagesSpec&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;GebReportingSpec&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="nd"&gt;@Autowired&lt;/span&gt;
-  &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-
-  &lt;span class="n"&gt;WebDriver&lt;/span&gt; &lt;span class="n"&gt;driver&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-
-  &lt;span class="o"&gt;...&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;li&gt;For this to work ensure to add the spock-spring dependency as illustrated in the &lt;a href="https://github.com/spring-projects/spring-test-mvc-htmlunit#updating-dependencies"&gt;updating-dependencies&lt;/a&gt; section. This is why &lt;code&gt;@Autowired&lt;/code&gt; annotations will be honored.&lt;/li&gt;
-&lt;li&gt;
-&lt;code&gt;@ContextConfiguration&lt;/code&gt; tells Spring what configuration to load. You will notice that we are loading a mock instance of our data tier to improve the performance of our tests. If we wanted, we could optionally run the tests against a real database. However, this has the disadvantages we &lt;a href="https://spring.io/blog/2014/03/19/introducing-spring-test-mvc-htmlunit#integration-testing-to-the-rescue"&gt;mentioned previously&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;
-&lt;code&gt;@WebAppConfiguration&lt;/code&gt; indicates that a &lt;code&gt;WebApplicationContext&lt;/code&gt; should be created rather than a &lt;code&gt;ApplicationContext&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;Next we need to create our &lt;code&gt;MockMvc&lt;/code&gt; instance from the &lt;code&gt;context&lt;/code&gt;. An example of how to do this has been provided below:&lt;/p&gt;
-
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setup&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="n"&gt;MockMvc&lt;/span&gt; &lt;span class="n"&gt;mockMvc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MockMvcBuilders&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;webAppContextSetup&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="o"&gt;).&lt;/span&gt;&lt;span class="na"&gt;build&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;
-  &lt;span class="o"&gt;...&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Of course this is just one way to create a &lt;code&gt;MockMvc&lt;/code&gt; instance. We could have decided to &lt;a href="http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/testing.html#spring-mvc-test-server-filters"&gt;add a Servlet Filter&lt;/a&gt;, use a &lt;a href="http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/testing.html#spring-mvc-test-server-setup-options"&gt;Standalone setup&lt;/a&gt;, etc. The important thing is that we need an instance of &lt;code&gt;MockMvc&lt;/code&gt;. For additional information on creating a &lt;code&gt;MockMvc&lt;/code&gt; instance refer to the &lt;a href="http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/testing.html#spring-mvc-test-framework"&gt;Spring MVC Test documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3&gt;
-&lt;a name="user-content-initializing-webdriver" class="anchor" href="#initializing-webdriver"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Initializing WebDriver&lt;/h3&gt;
-
-&lt;p&gt;Now that we have created the &lt;code&gt;MockMvc&lt;/code&gt; instance, we need to create a &lt;code&gt;MockMvcHtmlUnitDriver&lt;/code&gt; which ensures we use the &lt;code&gt;MockMvc&lt;/code&gt; instance we created in the previous step. We then use Geb's &lt;a href="http://www.gebish.org/manual/current/driver.html#explicit_lifecycle"&gt;explicit lifecycle&lt;/a&gt; and set the driver on Geb's &lt;a href="http://www.gebish.org/manual/current/browser.html#the_browser"&gt;Browser&lt;/a&gt; instance.&lt;/p&gt;
-
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="n"&gt;WebDriver&lt;/span&gt; &lt;span class="n"&gt;driver&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-
-&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setup&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="n"&gt;MockMvc&lt;/span&gt; &lt;span class="n"&gt;mockMvc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MockMvcBuilders&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;webAppContextSetup&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="o"&gt;).&lt;/span&gt;&lt;span class="na"&gt;build&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;
-  &lt;span class="n"&gt;driver&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;MockMvcHtmlUnitDriver&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mockMvc&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-  &lt;span class="n"&gt;browser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;driver&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;driver&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-
-&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;destroy&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;driver&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="n"&gt;driver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;close&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
-  &lt;span class="o"&gt;}&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3&gt;
-&lt;a name="user-content-using-geb-1" class="anchor" href="#using-geb-1"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Using Geb&lt;/h3&gt;
-
-&lt;p&gt;Now we can use Geb as we normally would, but without the need to deploy our application. For example, we can request the view to create a message with the following:&lt;/p&gt;
-
-&lt;div class="highlight highlight-groovy"&gt;&lt;pre&gt;&lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;CreateMessagePage&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We can then fill out the form and submit it to create a message.&lt;/p&gt;
-
-&lt;div class="highlight highlight-groovy"&gt;&lt;pre&gt;&lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;summary&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;expectedSummary&lt;/span&gt;
-&lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;expectedMessage&lt;/span&gt;
-&lt;span class="n"&gt;submit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;click&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ViewMessagePage&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Any unrecognized method calls or property accesses/references that are not found will be forwarded to the current page object. This removes a lot of the boilerplate code we needed when using WebDriver directly.&lt;/p&gt;
-
-&lt;p&gt;Additionally, this improves on the design of our &lt;a href="http://spring.io/blog/2014/03/21/spring-mvc-test-with-htmlunit"&gt;HtmlUnit test&lt;/a&gt;. The most obvious change is that we are now using the Page Object Pattern. As we mentioned in &lt;a href="#why-webdriver"&gt;Why WebDriver?&lt;/a&gt;, we could use the Page Object Pattern with HtmlUnit, but it is much easier now.&lt;/p&gt;
-
-&lt;p&gt;Let's take a look at our &lt;code&gt;CreateMessagePage&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class="highlight highlight-groovy"&gt;&lt;pre&gt;&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CreateMessagePage&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;Page&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'messages/form'&lt;/span&gt;
-  &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'Messages : Create'&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
-  &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;  &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="n"&gt;submit&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'input[type=submit]'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
-    &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'form'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
-    &lt;span class="n"&gt;errors&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nl"&gt;required:&lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'label.error, .alert-error'&lt;/span&gt;&lt;span class="o"&gt;)?.&lt;/span&gt;&lt;span class="na"&gt;text&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
-  &lt;span class="o"&gt;}&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The first thing you will notice is that our &lt;code&gt;CreateMessagePage&lt;/code&gt; extends the &lt;code&gt;Page&lt;/code&gt;. We won't go over the details of &lt;code&gt;Page&lt;/code&gt;, but in summary it contains base functionality for all our pages.&lt;/p&gt;
-
-&lt;p&gt;The next thing you will notice is that we define a URL in which this page can be found. This allows us to navigate to the page with:&lt;/p&gt;
-
-&lt;div class="highlight highlight-groovy"&gt;&lt;pre&gt;&lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;CreateMessagePage&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We also have a closure that determines if we are at the specified page. It should return true if we are on the correct page. This is why we can assert that we are on the correct page with:&lt;/p&gt;
-
-&lt;hr&gt;&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: We use an assertion in the closure, so we can determine where things went wrong if we were at the wrong page.&lt;/p&gt;
-
-&lt;hr&gt;&lt;div class="highlight highlight-groovy"&gt;&lt;pre&gt;&lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="n"&gt;CreateMessagePage&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We last create a content closure that specifies all the areas of interest within the page. We can use a &lt;a href="http://www.gebish.org/manual/current/intro.html#the_jquery_ish_navigator_api"&gt;jQuery-ish Navigator API&lt;/a&gt; to select the content we are interested in.&lt;/p&gt;
-
-&lt;p&gt;Finally, we can verify that a new message was created successfully&lt;/p&gt;
-
-&lt;div class="highlight highlight-groovy"&gt;&lt;pre&gt;&lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="n"&gt;ViewMessagePage&lt;/span&gt;
-&lt;span class="n"&gt;success&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'Successfully created a new message'&lt;/span&gt;
-&lt;span class="n"&gt;id&lt;/span&gt;
-&lt;span class="n"&gt;date&lt;/span&gt;
-&lt;span class="n"&gt;summary&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;expectedSummary&lt;/span&gt;
-&lt;span class="n"&gt;message&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;expectedMessage&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;hr&gt;&lt;p&gt;&lt;strong&gt;Feedback please!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;If you have feedback on this blog series or the Spring Test MVC HtmlUnit, I encourage you to reach out via the comments below, &lt;a href="https://github.com/spring-projects/spring-test-mvc-htmlunit/issues"&gt;github issues&lt;/a&gt;, or ping me on twitter &lt;a href="https://twitter.com/rob_winch"&gt;@rob_winch&lt;/a&gt;. Of course the best feedback comes in the form of &lt;a href="https://github.com/spring-projects/spring-test-mvc-htmlunit#contributing"&gt;contributions&lt;/a&gt;.&lt;/p&gt;</content>
   </entry>
 </feed>
 

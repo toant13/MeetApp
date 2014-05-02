@@ -2,19 +2,12 @@ from django.db import models
 from gcm.models import AbstractDevice
 
 
-class UserDevice(AbstractDevice):
-    username = models.CharField(max_length=20, blank=True, default='')
-    password = models.CharField(max_length=20, blank=True, default='')
-    
-    class Meta:
-        ordering = ('username',)
-    
-    def __str__(self):
-        return self.username
+
 
 
 class Store (models.Model):
     storeName = models.CharField(max_length=20, blank=True, default='')
+    owner = models.ForeignKey('auth.User', related_name='store')
     
     class Meta:
         ordering = ('storeName',)
@@ -45,3 +38,12 @@ class MenuItem (models.Model):
     def __str__(self):            
         return self.name
     
+class UserDevice(AbstractDevice):
+    username = models.CharField(max_length=20, blank=True, default='')
+    password = models.CharField(max_length=20, blank=True, default='')
+    store = models.ForeignKey(Store, related_name='Device')
+    class Meta:
+        ordering = ('username',)
+    
+    def __str__(self):
+        return self.username
