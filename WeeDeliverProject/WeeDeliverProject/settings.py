@@ -41,6 +41,11 @@ INSTALLED_APPS = (
     'gcm',
 )
 
+REST_FRAMEWORK = {
+    'PAGINATE_BY': 10
+}
+
+
 GCM_APIKEY = "AIzaSyAuSmpawGorpIBi6Y1GxtnW2ZZvIrkJi_8"
 
 GCM_DEVICE_MODEL = "ProviderMenuApp.models.UserDevice"

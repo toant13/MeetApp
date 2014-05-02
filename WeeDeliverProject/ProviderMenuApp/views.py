@@ -1,9 +1,14 @@
 from ProviderMenuApp.MenuSerializer import MenuItemSerializer, \
     MenuCategorySerializer, StoreSerializer, DeviceSerializers, UserSerializer
 from ProviderMenuApp.models import MenuItem, MenuCategory, Store, UserDevice
-from ProviderMenuApp.permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly
+from ProviderMenuApp.permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly, IsOwner
 from django.contrib.auth.models import User
 from rest_framework import generics, permissions
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
+
+from rest_framework import viewsets
 
 
 class MenuItem_list(generics.ListCreateAPIView):
@@ -36,14 +41,21 @@ class Device_list(generics.ListCreateAPIView):
     queryset = UserDevice.objects.all()
     serializer_class = DeviceSerializers
 
-class UserList(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
 
-
-class UserDetail(generics.RetrieveAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
     
+class UserViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (permissions.IsAdminUser,)
+    
+    
+@api_view(('GET',))
+def api_root(request, format=None):
+    return Response({
+#         'users': reverse('user-list', request=request, format=format),
+        'store': reverse('store-list', request=request, format=format),
+        'menuCategory': reverse('menuCategory-list', request=request, format=format),
+        'item': reverse('item-list', request=request, format=format),
+    })    
     
     
