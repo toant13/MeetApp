@@ -1,7 +1,7 @@
 from ProviderMenuApp.MenuSerializer import MenuItemSerializer, \
     MenuCategorySerializer, StoreSerializer, DeviceSerializers, UserSerializer
 from ProviderMenuApp.models import MenuItem, MenuCategory, Store, UserDevice
-from ProviderMenuApp.permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly, IsOwner
+from ProviderMenuApp.permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly
 from django.contrib.auth.models import User
 from rest_framework import generics, permissions
 from rest_framework.decorators import api_view
@@ -19,6 +19,7 @@ class MenuItem_list(generics.ListCreateAPIView):
 class MenuCategory_list(generics.ListCreateAPIView):
     queryset = MenuCategory.objects.all()
     serializer_class = MenuCategorySerializer
+
     
 class Store_list(generics.ListCreateAPIView): 
     queryset = Store.objects.all()
