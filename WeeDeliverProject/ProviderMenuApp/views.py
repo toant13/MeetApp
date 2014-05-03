@@ -1,7 +1,7 @@
 from ProviderMenuApp.MenuSerializer import MenuItemSerializer, \
     MenuCategorySerializer, StoreSerializer, DeviceSerializers, UserSerializer
 from ProviderMenuApp.models import MenuItem, MenuCategory, Store, UserDevice
-from ProviderMenuApp.permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly
+from ProviderMenuApp.permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly, IsOwner
 from django.contrib.auth.models import User
 from rest_framework import generics, permissions
 from rest_framework.decorators import api_view
@@ -14,14 +14,21 @@ from rest_framework import viewsets
 class MenuItem_list(generics.ListCreateAPIView):
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
-    permission_classes = (permissions.IsAdminUser,)
+    
 
 class MenuCategory_list(generics.ListCreateAPIView):
     queryset = MenuCategory.objects.all()
     serializer_class = MenuCategorySerializer
     permission_classes = (permissions.IsAdminUser,)
+
 #     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
-#                       IsOwnerOrReadOnly,)  
+#                       IsOwner,)
+
+
+
+
+
+
 
     
 class Store_list(generics.ListCreateAPIView): 
@@ -43,7 +50,15 @@ class Store_Detail(generics.RetrieveUpdateDestroyAPIView):
         
 class StoreCategory_list(generics.ListCreateAPIView):
     serializer_class = MenuCategorySerializer 
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+                      IsOwnerOrReadOnly,)  
     
+    def pre_save(self, obj):
+        obj.owner = self.request.user
+        pKey = self.kwargs['pk']
+        s = Store.objects.get(pk=pKey)
+        obj.store = s
+        
     def get_queryset(self):
         pKey = self.kwargs['pk']
         return MenuCategory.objects.filter(store=pKey)

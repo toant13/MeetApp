@@ -37,7 +37,7 @@ urlpatterns = patterns('ProviderMenuApp.views',
     url(r'^users/(?P<pk>[0-9]+)/$', user_detail, name='user-detail'),
    
     url(r'^store/$', views.Store_list.as_view(), name='store-list'),
-    url(r'^store/(?P<pk>[0-9]+)$', views.Store_Detail.as_view()),
+    url(r'^store/(?P<pk>[0-9]+)/$', views.Store_Detail.as_view()),
     url(r'^store/(?P<pk>[0-9]+)/category/$', views.StoreCategory_list.as_view(), name='store-menu-list'),
     url(r'^store/(?P<pk>[0-9]+)/category/(?P<catpk>[0-9]+)$', views.StoreCategory_detail.as_view()),
     url(r'^store/(?P<pk>[0-9]+)/category/(?P<catpk>[0-9]+)/item/$', views.StoreCategoryItem_list.as_view()),
