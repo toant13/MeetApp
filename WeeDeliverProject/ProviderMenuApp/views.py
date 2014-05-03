@@ -14,11 +14,14 @@ from rest_framework import viewsets
 class MenuItem_list(generics.ListCreateAPIView):
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
-    
+    permission_classes = (permissions.IsAdminUser,)
 
 class MenuCategory_list(generics.ListCreateAPIView):
     queryset = MenuCategory.objects.all()
     serializer_class = MenuCategorySerializer
+    permission_classes = (permissions.IsAdminUser,)
+#     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+#                       IsOwnerOrReadOnly,)  
 
     
 class Store_list(generics.ListCreateAPIView): 
@@ -37,11 +40,38 @@ class Store_Detail(generics.RetrieveUpdateDestroyAPIView):
 
     def pre_save(self, obj):
         obj.owner = self.request.user
+        
+class StoreCategory_list(generics.ListCreateAPIView):
+    serializer_class = MenuCategorySerializer 
+    
+    def get_queryset(self):
+        pKey = self.kwargs['pk']
+        return MenuCategory.objects.filter(store=pKey)
+
+class StoreCategory_detail(generics.RetrieveUpdateDestroyAPIView): 
+    serializer_class = MenuCategorySerializer 
+     
+    def get_queryset(self):
+        pKey = self.kwargs['catpk']
+        return MenuCategory.objects.filter(store=pKey)
+
+class StoreCategoryItem_list(generics.ListCreateAPIView):
+    serializer_class = MenuItemSerializer 
+    def get_queryset(self):
+        pKey = self.kwargs['catpk']
+        return MenuItem.objects.filter(category=pKey)
+    
+class StoreCategoryItem_detail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = MenuItemSerializer 
+    def get_queryset(self):
+        pKey = self.kwargs['itempk']
+        return MenuItem.objects.filter(category=pKey)  
+    
     
 class Device_list(generics.ListCreateAPIView):
     queryset = UserDevice.objects.all()
     serializer_class = DeviceSerializers
-
+    permission_classes = (permissions.IsAdminUser,)
 
     
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
@@ -55,7 +85,7 @@ def api_root(request, format=None):
     return Response({
 #         'users': reverse('user-list', request=request, format=format),
         'store': reverse('store-list', request=request, format=format),
-        'menuCategory': reverse('menuCategory-list', request=request, format=format),
+        'category': reverse('menuCategory-list', request=request, format=format),
         'item': reverse('item-list', request=request, format=format),
     })    
     

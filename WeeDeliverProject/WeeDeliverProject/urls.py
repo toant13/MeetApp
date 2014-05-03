@@ -32,14 +32,17 @@ urlpatterns = patterns('ProviderMenuApp.views',
     url(r'', include('gcm.urls')),
     url(r'^item/$', views.MenuItem_list.as_view(), name='item-list'),
     url(r'^category/$', views.MenuCategory_list.as_view(), name='menuCategory-list'),
-    url(r'^store/$', views.Store_list.as_view(), name='store-list'),
-    url(r'^store/(?P<pk>[0-9]+)$', views.Store_Detail.as_view()),
     url(r'^device/$', views.Device_list.as_view()),
-
     url(r'^users/$', user_list, name='user-list'),
     url(r'^users/(?P<pk>[0-9]+)/$', user_detail, name='user-detail'),
-    
-    
+   
+    url(r'^store/$', views.Store_list.as_view(), name='store-list'),
+    url(r'^store/(?P<pk>[0-9]+)$', views.Store_Detail.as_view()),
+    url(r'^store/(?P<pk>[0-9]+)/category/$', views.StoreCategory_list.as_view(), name='store-menu-list'),
+    url(r'^store/(?P<pk>[0-9]+)/category/(?P<catpk>[0-9]+)$', views.StoreCategory_detail.as_view()),
+    url(r'^store/(?P<pk>[0-9]+)/category/(?P<catpk>[0-9]+)/item/$', views.StoreCategoryItem_list.as_view()),
+    url(r'^store/(?P<pk>[0-9]+)/category/(?P<catpk>[0-9]+)/item/(?P<itempk>[0-9]+)/$', views.StoreCategoryItem_detail.as_view()),
+
     url(r'^$', 'api_root'),
 )
 
