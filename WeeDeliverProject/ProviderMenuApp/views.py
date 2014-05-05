@@ -1,14 +1,14 @@
 from ProviderMenuApp.MenuSerializer import MenuItemSerializer, \
     MenuCategorySerializer, StoreSerializer, DeviceSerializers, UserSerializer
 from ProviderMenuApp.models import MenuItem, MenuCategory, Store, UserDevice
-from ProviderMenuApp.permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly, IsOwner
+from ProviderMenuApp.permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly, \
+    IsOwner
 from django.contrib.auth.models import User
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, viewsets
 from rest_framework.decorators import api_view
+from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
-
-from rest_framework import viewsets
 
 
 class MenuItem_list(generics.ListCreateAPIView):
@@ -20,14 +20,6 @@ class MenuCategory_list(generics.ListCreateAPIView):
     queryset = MenuCategory.objects.all()
     serializer_class = MenuCategorySerializer
     permission_classes = (permissions.IsAdminUser,)
-
-#     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
-#                       IsOwner,)
-
-
-
-
-
 
 
     
@@ -49,32 +41,63 @@ class Store_Detail(generics.RetrieveUpdateDestroyAPIView):
         obj.owner = self.request.user
         
 class StoreCategory_list(generics.ListCreateAPIView):
+    queryset = MenuCategory.objects.all()
     serializer_class = MenuCategorySerializer 
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                       IsOwnerOrReadOnly,)  
-    
+
+     
     def pre_save(self, obj):
-        obj.owner = self.request.user
         pKey = self.kwargs['pk']
         s = Store.objects.get(pk=pKey)
-        obj.store = s
-        
+        obj.owner = s.owner        
+         
+
     def get_queryset(self):
         pKey = self.kwargs['pk']
         return MenuCategory.objects.filter(store=pKey)
+
 
 class StoreCategory_detail(generics.RetrieveUpdateDestroyAPIView): 
     serializer_class = MenuCategorySerializer 
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+                      IsOwnerOrReadOnly,)   
+    
+    def pre_save(self, obj):
+        pKey = self.kwargs['pk']
+        s = Store.objects.get(pk=pKey)
+        obj.owner = s.owner 
+     
+    def get_object(self):
+        pKey = self.kwargs['pk']
+        s = Store.objects.get(pk=pKey)
+        obj = get_object_or_404(self.get_queryset())
+        obj.owner = s.owner
+        self.check_object_permissions(self.request, obj)
+        return obj
+     
      
     def get_queryset(self):
         pKey = self.kwargs['catpk']
-        return MenuCategory.objects.filter(store=pKey)
+        return MenuCategory.objects.filter(pk=pKey)
+
 
 class StoreCategoryItem_list(generics.ListCreateAPIView):
     serializer_class = MenuItemSerializer 
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+                      IsOwnerOrReadOnly,)   
+    
+    def pre_save(self, obj):
+        pKey = self.kwargs['pk']
+        catPK = self.kwargs['catpk']
+        s = Store.objects.get(pk=pKey)
+        m = MenuCategory.objects.get(pk=catPK)
+        obj.category = m
+        obj.owner = s.owner 
+    
     def get_queryset(self):
         pKey = self.kwargs['catpk']
-        return MenuItem.objects.filter(category=pKey)
+        return MenuCategory.objects.filter(menuItem=pKey)
     
 class StoreCategoryItem_detail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = MenuItemSerializer 

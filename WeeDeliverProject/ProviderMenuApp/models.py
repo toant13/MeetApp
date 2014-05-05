@@ -21,7 +21,6 @@ class Store (models.Model):
 class MenuCategory (models.Model):
     categoryName = models.CharField(max_length=20, blank=True, default='')
     store = models.ForeignKey(Store, related_name='menuCategory')
-    owner = models.ForeignKey('auth.User', related_name='menuOwner')
     
     class Meta:
         ordering = ('categoryName',)

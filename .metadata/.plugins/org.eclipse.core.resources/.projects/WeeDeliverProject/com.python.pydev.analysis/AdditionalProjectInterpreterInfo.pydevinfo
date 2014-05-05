@@ -45,7 +45,7 @@ WeeDeliverProject.urls|0|/Users/toantran/Documents/Java_development/workspace/Me
 26=MenuCategory.Meta
 -- END DICTIONARY
 -- START TREE 1
-38
+40
 !<m|0|
 Is|0|
 adm|0|
@@ -65,9 +65,11 @@ iso|2|IsOwner!33@IsOwnerOrReadOnly!33@
 ist|0|
 jso|0|
 lan|1|LANGUAGE_CODE!11@
+log|2|logger!35@LOGGING!11@
 men|4|MenuItem!41@MenuItemSerializer!25@MenuCategorySerializer!25@MenuCategory!41@
 mid|1|MIDDLEWARE_CLASSES!11@
 myd|0|
+myf|0|
 per|0|
 pre|0|
 que|0|
@@ -86,7 +88,7 @@ use|7|user_detail!51@USE_L10N!11@UserDevice!41@USE_TZ!11@USE_I18N!11@user_list!5
 wsg|1|WSGI_APPLICATION!11@
 -- END TREE
 -- START TREE 2
-28
+30
 !<m|0|
 __i|0|
 __s|4|__str__!7&42@__str__!8&42@__str__!9&42@__str__!10&42@
@@ -97,7 +99,7 @@ dev|0|
 fie|5|fields!11&27@fields!12&27@fields!13&27@fields!14&27@fields!15&27@
 fil|0|
 get|0|
-has|3|has_object_permission!16&34@has_object_permission!17&34@has_permission!18&34@
+has|4|has_object_permission!16&34@has_object_permission!17&34@has_permission!18&34@has_permission!17&34@
 m|0|
 men|2|menuItem!19&27@menuCategory!20&27@
 met|9|Meta!21&25@Meta!22&25@Meta!23&25@Meta!19&25@Meta!20&25@Meta!7&41@Meta!8&41@Meta!9&41@Meta!10&41@
@@ -105,9 +107,11 @@ mod|5|model!11&27@model!12&27@model!13&27@model!14&27@model!15&27@
 nam|1|name!8&43@
 obj|0|
 ord|4|ordering!24&43@ordering!25&43@ordering!26&43@ordering!27&43@
-own|4|owner!9&43@owner!10&43@owner!19&27@owner!20&27@
+own|2|owner!10&43@owner!20&27@
 pas|1|password!7&43@
 per|0|
+pke|0|
+pos|0|
 pre|1|pre_save!20&26@
 pri|1|price!8&43@
 que|0|
