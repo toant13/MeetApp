@@ -10,6 +10,9 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
 
+import logging
+logger = logging.getLogger('MYAPP')
+    
 
 class MenuItem_list(generics.ListCreateAPIView):
     queryset = MenuItem.objects.all()
@@ -48,12 +51,14 @@ class StoreCategory_list(generics.ListCreateAPIView):
 
      
     def pre_save(self, obj):
+        logger.debug("categorylist")
         pKey = self.kwargs['pk']
         s = Store.objects.get(pk=pKey)
+        obj.store = s
         obj.owner = s.owner        
          
 
-    def get_queryset(self):
+    def get_queryset(self):       
         pKey = self.kwargs['pk']
         return MenuCategory.objects.filter(store=pKey)
 
