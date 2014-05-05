@@ -14,7 +14,7 @@ from rest_framework.reverse import reverse
 class MenuItem_list(generics.ListCreateAPIView):
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
-    
+    permission_classes = (permissions.IsAdminUser,)
 
 class MenuCategory_list(generics.ListCreateAPIView):
     queryset = MenuCategory.objects.all()
