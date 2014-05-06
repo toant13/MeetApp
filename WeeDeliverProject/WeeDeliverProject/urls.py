@@ -49,7 +49,7 @@ urlpatterns = patterns('',
     #NONREST URLs
     url(r'^$', views.index, name='index'),
     url(r'^store/(?P<pk>[0-9]+)/$', views.defaultStoreDetail, name='storeDetail'),
-    url(r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 )
 
 

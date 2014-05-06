@@ -1,2 +1,6 @@
 *.DS_Store
 RemoteSystemsTempFiles/
+*.classpath
+*.project
+.settings/
+target/
