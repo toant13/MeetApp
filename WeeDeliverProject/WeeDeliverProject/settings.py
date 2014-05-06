@@ -45,6 +45,11 @@ REST_FRAMEWORK = {
     'PAGINATE_BY': 10
 }
 
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+MEDIA_ROOT = '/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/'
+MEDIA_URL ='/site_media/'
+# STATIC_DOC_ROOT = '/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/'
 
 GCM_APIKEY = "AIzaSyAuSmpawGorpIBi6Y1GxtnW2ZZvIrkJi_8"
 

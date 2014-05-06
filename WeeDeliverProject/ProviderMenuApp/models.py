@@ -55,7 +55,7 @@ class MenuItem (models.Model):
     description = models.CharField(max_length=140, blank=True, default='')
     price = models.DecimalField(max_digits=8, decimal_places=2)
     category = models.ForeignKey(MenuCategory, related_name='menuItem')
-    itemImage = models.ImageField('item', upload_to='images/item/', blank=True, null=True)
+    itemImage = models.ImageField('item', upload_to=path_and_rename('images/item/' ), blank=True, null=True)
     
     class Meta:
         ordering = ('name',)

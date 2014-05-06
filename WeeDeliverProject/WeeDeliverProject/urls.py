@@ -2,8 +2,7 @@ from ProviderMenuApp import views
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from rest_framework.urlpatterns import format_suffix_patterns
-from rest_framework.routers import DefaultRouter
-
+import settings
 admin.autodiscover()
 
 
@@ -19,7 +18,7 @@ user_detail = views.UserViewSet.as_view({
 # router.register(r'users', views.UserViewSet)
 
 
-urlpatterns = patterns('ProviderMenuApp.views',
+urlpatterns = patterns('',
                        
 #     url(r'^', include(router.urls)),
     
@@ -39,7 +38,7 @@ urlpatterns = patterns('ProviderMenuApp.views',
     url(r'^developer/users/(?P<pk>[0-9]+)/$', user_detail, name='user-detail'),
    
     #STORE USER REST URLs
-    url(r'^developer/$', 'api_root'),
+    url(r'^developer/$', 'ProviderMenuApp.views.api_root'),
     url(r'^developer/store/$', views.Store_list.as_view(), name='store-list'),
     url(r'^developer/store/(?P<pk>[0-9]+)/$', views.Store_Detail.as_view()),
     url(r'^developer/store/(?P<pk>[0-9]+)/category/$', views.StoreCategory_list.as_view(), name='store-menu-list'),
@@ -47,7 +46,10 @@ urlpatterns = patterns('ProviderMenuApp.views',
     url(r'^developer/store/(?P<pk>[0-9]+)/category/(?P<catpk>[0-9]+)/item/$', views.StoreCategoryItem_list.as_view()),
     url(r'^developer/store/(?P<pk>[0-9]+)/category/(?P<catpk>[0-9]+)/item/(?P<itempk>[0-9]+)/$', views.StoreCategoryItem_detail.as_view()),
 
-    
+    #NONREST URLs
+    url(r'^$', views.index, name='index'),
+    url(r'^store/(?P<pk>[0-9]+)/$', views.defaultStoreDetail, name='storeDetail'),
+    url(r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 )
 
 

@@ -1,18 +1,29 @@
 from ProviderMenuApp.MenuSerializer import MenuItemSerializer, \
     MenuCategorySerializer, StoreSerializer, DeviceSerializers, UserSerializer
 from ProviderMenuApp.models import MenuItem, MenuCategory, Store, UserDevice
-from ProviderMenuApp.permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly, \
-    IsOwner
+from ProviderMenuApp.permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly
 from django.contrib.auth.models import User
+from django.http.response import HttpResponse
+from django.shortcuts import render
+from django.template import RequestContext, loader
 from rest_framework import generics, permissions, viewsets
 from rest_framework.decorators import api_view
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
-
 import logging
+
 logger = logging.getLogger('MYAPP')
     
+    
+def index(request):
+    stores = Store.objects.order_by('storeName')[:5]
+    context = RequestContext(request, {'stores' : stores,})
+    return render(request, 'provider/index.html', context)
+
+def defaultStoreDetail(request, pk):
+    return HttpResponse("You're looking at poll %s." % pk)
+
 
 class MenuItem_list(generics.ListCreateAPIView):
     queryset = MenuItem.objects.all()
