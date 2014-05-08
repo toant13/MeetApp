@@ -6,12 +6,16 @@ from django.contrib.auth.models import User
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.template import RequestContext, loader
+from django.views.generic.detail import DetailView
 from rest_framework import generics, permissions, viewsets
 from rest_framework.decorators import api_view
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
 import logging
+
+
+
 
 logger = logging.getLogger('MYAPP')
     
@@ -21,8 +25,22 @@ def index(request):
     context = RequestContext(request, {'stores' : stores,})
     return render(request, 'provider/index.html', context)
 
-def defaultStoreDetail(request, pk):
-    return HttpResponse("You're looking at poll %s." % pk)
+
+
+class NonApiStoreDetail(DetailView):
+    model = Store
+    context_object_name = 'storeDetail'
+    template_name = 'provider/store.html'
+    
+      
+    def get_context_data(self, **kwargs):
+        pKey = self.kwargs['pk']
+        storeObj = Store.objects.get(pk=pKey)
+        context = super(NonApiStoreDetail, self).get_context_data(**kwargs)
+        context['store'] = storeObj
+        context['categories'] = MenuCategory.objects.filter(store = storeObj)
+        context['items'] = MenuItem.objects.all()
+        return context
 
 
 class MenuItem_list(generics.ListCreateAPIView):
