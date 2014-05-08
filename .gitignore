@@ -4,3 +4,4 @@ RemoteSystemsTempFiles/
 *.project
 .settings/
 target/
+*.sqlite3
