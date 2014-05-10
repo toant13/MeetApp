@@ -4,6 +4,8 @@ ProviderMenuApp.__init__|/Users/toantran/Documents/Java_development/workspace/Me
 ProviderMenuApp.admin|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/admin.py
 ProviderMenuApp.models|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/models.py
 ProviderMenuApp.permissions|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/permissions.py
+ProviderMenuApp.templatetags.__init__|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/templatetags/__init__.py
+ProviderMenuApp.templatetags.item_extras|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/templatetags/item_extras.py
 ProviderMenuApp.tests|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/tests.py
 ProviderMenuApp.views|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/views.py
 WeeDeliverProject.__init__|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/WeeDeliverProject/__init__.py

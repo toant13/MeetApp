@@ -80,7 +80,6 @@ class StoreCategory_list(generics.ListCreateAPIView):
 
      
     def pre_save(self, obj):
-        logger.debug("categorylist")
         pKey = self.kwargs['pk']
         s = Store.objects.get(pk=pKey)
         obj.store = s
@@ -112,8 +111,9 @@ class StoreCategory_detail(generics.RetrieveUpdateDestroyAPIView):
      
      
     def get_queryset(self):
-        pKey = self.kwargs['catpk']
-        return MenuCategory.objects.filter(pk=pKey)
+        pKey = self.kwargs['pk']
+        catPK = self.kwargs['catpk']
+        return MenuCategory.objects.filter(store=pKey, pk=catPK)
 
 
 class StoreCategoryItem_list(generics.ListCreateAPIView):
@@ -130,15 +130,32 @@ class StoreCategoryItem_list(generics.ListCreateAPIView):
         obj.owner = s.owner 
     
     def get_queryset(self):
-        pKey = self.kwargs['catpk']
-        return MenuCategory.objects.filter(menuItem=pKey)
+        pKey = self.kwargs['pk']
+        catPK = self.kwargs['catpk']
+        m = MenuCategory.objects.filter(store=pKey, pk=catPK)
+        return MenuItem.objects.filter(category=m)
     
 class StoreCategoryItem_detail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer 
-    def get_queryset(self):
-        pKey = self.kwargs['itempk']
-        return MenuItem.objects.filter(category=pKey)  
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)   
     
+    def get_object(self):
+        logger.debug("StoreCategoryItem_detail get_object") 
+        pKey = self.kwargs['pk']
+        obj = get_object_or_404(self.get_queryset())
+        s = Store.objects.get(pk=pKey)
+        obj.owner = s.owner
+        self.check_object_permissions(self.request, obj)
+        return obj
+    
+    def get_queryset(self):
+        logger.debug("StoreCategoryItem_detail get_queryset")
+        pKey = self.kwargs['pk']
+        catPK = self.kwargs['catpk']
+        itemPK = self.kwargs['itempk']
+        m = MenuCategory.objects.filter(store=pKey, pk=catPK)
+        return MenuItem.objects.filter(category=m, pk=itemPK)
     
 class Device_list(generics.ListCreateAPIView):
     queryset = UserDevice.objects.all()

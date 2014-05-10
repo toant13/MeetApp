@@ -5,7 +5,108 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-05-07T17:04:00Z</updated>
+  <updated>2014-05-08T16:38:00Z</updated>
+  <entry>
+    <title>Spring Integration Java DSL Milestone 1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/05/08/spring-integration-java-dsl-milestone-1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2014-05-08:1561</id>
+    <updated>2014-05-08T16:38:00Z</updated>
+    <content type="html">&lt;p&gt;The Spring Integration development team is pleased to announce the release of the &lt;strong&gt;First Milestone of the Java DSL extension
+for &lt;a href="http://projects.spring.io/spring-integration"&gt;Spring Integration&lt;/a&gt;&lt;/strong&gt;!&lt;/p&gt;
+
+&lt;p&gt;The general purpose of the Java DSL is to provide a fluent and convenient API for &lt;em&gt;Message Flows&lt;/em&gt; based on
+&lt;a href="http://www.eaipatterns.com"&gt;EIP&lt;/a&gt; and avoid boilerplate Spring Integration configuration.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;org.springframework.integration:spring-integration-java-dsl:1.0.0.M1&lt;/code&gt; artifact is available from the
+&lt;a href="http://repo.spring.io/libs-milestone"&gt;Spring IO Milestone Repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can find in more information in the &lt;a href="https://github.com/spring-projects/spring-integration-extensions/wiki/Spring-Integration-Java-DSL-Reference"&gt;Reference Manual&lt;/a&gt;
+and from &lt;a href="https://github.com/spring-projects/spring-integration-extensions/tree/master/spring-integration-java-dsl"&gt;source code&lt;/a&gt;,
+however let us shed some light on the main features.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Concept&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The Spring Integration Java DSL is not similar to existing &lt;a href="https://github.com/spring-projects/spring-integration-dsl-scala"&gt;Scala&lt;/a&gt;
+and &lt;a href="https://github.com/spring-projects/spring-integration-dsl-groovy"&gt;Groovy&lt;/a&gt; DSls; nor is it similar to the
+&lt;a href="https://camel.apache.org/java-dsl.html"&gt;Apache Camel Java DSL&lt;/a&gt;, although it does implement the &lt;em&gt;method-chain&lt;/em&gt; principle.&lt;/p&gt;
+
+&lt;p&gt;Our main goal is to reuse existing practices from the Spring Framework JavaConfig (&lt;code&gt;@Configuration&lt;/code&gt; classes), as well from Spring Integration Core
+components. To achieve the &lt;em&gt;method-chain&lt;/em&gt; principle, we provide a set of &lt;em&gt;builders&lt;/em&gt; and their &lt;em&gt;factories&lt;/em&gt;.
+Also Java 8 &lt;em&gt;Lambdas&lt;/em&gt; provide some additional assistance for clean syntax.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Basics&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The central class is &lt;code&gt;IntegrationFlows&lt;/code&gt; - the &lt;code&gt;IntegrationFlowBuilder&lt;/code&gt; factory, - which should be used from a &lt;code&gt;@Bean&lt;/code&gt; definition method to populate the &lt;code&gt;IntegrationFlow&lt;/code&gt; bean using &lt;em&gt;method-chain*s and *Lambdas&lt;/em&gt; as parameters. The &lt;code&gt;IntegrationFlowBuilder&lt;/code&gt; provides a lot of
+overloaded methods to configure Integration Endpoints. We call them &lt;strong&gt;EIP-methods&lt;/strong&gt;. The canonical sample:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Bean&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="nf"&gt;helloWorldFlow&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;IntegrationFlows&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;from&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"helloWorldInput"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;filter&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"World"&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;equals&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;transform&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Hello "&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;concat&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;handle&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;println&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;get&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Using Spring Integration terms the description for the sample above is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A &lt;code&gt;Message&lt;/code&gt; is sent to the "helloWorldInput" channel;&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;filter&lt;/code&gt; accepts it only if its &lt;code&gt;payload&lt;/code&gt; is the String "World";&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;transformer&lt;/code&gt; prefixes the &lt;code&gt;payload&lt;/code&gt; with &lt;code&gt;Hello&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;handler&lt;/code&gt; prints the result to the STDOUT;&lt;/li&gt;
+&lt;li&gt;if the original &lt;code&gt;payload&lt;/code&gt; isn't "World", we won't see anything in the console - the &lt;code&gt;Message&lt;/code&gt; is discarded by
+&lt;code&gt;filter&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;The Spring Integration Java DSL can be used in existing applications as is, and can be wired with exising
+Messaging Annotations configuration or Spring Integration XML configuration, and, of course, in Spring Boot applications.&lt;/p&gt;
+
+&lt;p&gt;Plesae refer to the Reference Manual mentioned above for more information.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Wrapping up&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is just the beginning and we are working on an appropriate solution to configure protocol-specific adapters
+using similar fluent API and Lambdas. Please don't hesitate to share your thoughts and feedback:
+&lt;a href="http://forum.spring.io/forum/spring-projects/integration"&gt;Spring Forum&lt;/a&gt;,
+&lt;a href="http://stackoverflow.com"&gt;StackOverflow&lt;/a&gt; (&lt;code&gt;spring-integration&lt;/code&gt; tag), &lt;a href="https://jira.spring.io/browse/INT"&gt;Spring JIRA&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Webinar: Spring Integration 4.0&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Don't miss the &lt;a href="https://spring.io/blog/2014/04/22/webinar-spring-integration-4-0-the-new-frontier"&gt;Webinar&lt;/a&gt;
+with &lt;a href="https://spring.io/team/grussell"&gt;Gary Russell&lt;/a&gt; demonstrating new features from
+&lt;a href="http://docs.spring.io/spring-integration/docs/4.0.0.RELEASE/reference/html/whats-new.html"&gt;Spring Integration 4.0&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SpringOne 2GX 2014 is around the corner&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Book your place at &lt;a href="http://www.springone2gx.com/"&gt;SpringOne in Dallas, TX&lt;/a&gt; for Sept 8-11 soon.
+It's simply the best opportunity to find out first
+hand all that's going on and to provide direct feedback.
+Expect a number of significant new announcements this year.
+We are anticipating that several in-depth Spring-Integration sessions will be presented.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Webinar Replay: Web Application diagnostics with Java and JavaScript</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/05/08/webinar-replay-web-application-diagnostics-with-java-and-javascript" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2014-05-08:1563</id>
+    <updated>2014-05-08T13:22:00Z</updated>
+    <content type="html">&lt;p&gt;Speakers:  Ashley Puls, New Relic  Josh Long, Pivotal &lt;/p&gt;
+
+&lt;p&gt;There is more and more usage of JavaScript on the client side today. Many are starting down the difficult path of full blown application development in JS on the client side, going beyond having a simple rollover menu logic or presentation component. But tracking and tracing effectively means looking at the whole application, not just the front end. New Relic can be used either in development or production to diagnose hybrid JavaScript/Java applications.  In this session, Josh Long (Pivotal) and Ashley Puls (New Relic) will show how you can track and trace your way through today's hybrid JavaScript+Java web apps - resolving slow page loads, blocked threads, slow queries, etc.&lt;/p&gt;
+
+&lt;p&gt;Learn more about using New Relic at: &lt;a href="http://www.newrelic.com"&gt;http://www.newrelic.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Learn more about using Spring at: &lt;a href="http://www.spring.io"&gt;http://www.spring.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe width="420" height="315" src="//www.youtube.com/embed/ixnlDL6wli4" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
   <entry>
     <title>Groovy 2.3 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2014/05/07/groovy-2-3-released" />
@@ -81,6 +182,12 @@
 
 &lt;p&gt;We first introduce a &lt;code&gt;MessageService&lt;/code&gt; that requires the user to be authenticated in order to access it.&lt;/p&gt;
 
+&lt;p&gt;&lt;div class="callout"&gt;
+&lt;div class="callout-title"&gt;Source Code&lt;/div&gt;
+You can find the complete source code for this blog series &lt;a href="https://github.com/rwinch/spring-security-test-blog"&gt;on github&lt;/a&gt;
+
+&lt;/div&gt;&lt;/p&gt;
+
 &lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;HelloMessageService&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;MessageService&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 
     &lt;span class="nd"&gt;@PreAuthorize&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"authenticated"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
@@ -103,7 +210,7 @@
 &lt;p&gt;Before we can use Spring Security Test support, we must perform some setup. An example can be seen below:&lt;/p&gt;
 
 &lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@RunWith&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SpringJUnit4ClassRunner&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="nd"&gt;@ContextConfiguration&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;classes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WithMockUserTests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@ContextConfiguration&lt;/span&gt;
 &lt;span class="nd"&gt;@TestExecutionListeners&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;listeners&lt;/span&gt;&lt;span class="o"&gt;={&lt;/span&gt;&lt;span class="n"&gt;ServletTestExecutionListener&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
         &lt;span class="n"&gt;DependencyInjectionTestExecutionListener&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
         &lt;span class="n"&gt;DirtiesContextTestExecutionListener&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
@@ -119,7 +226,7 @@
 &lt;code&gt;@RunWith&lt;/code&gt; instructs the spring-test module that it should create an ApplicationContext This is no different than using the existing Spring Test support. For additional information, refer to the &lt;a href="http://docs.spring.io/spring-framework/docs/4.0.x/spring-framework-reference/htmlsingle/#integration-testing-annotations-standard"&gt;Spring Reference&lt;/a&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;code&gt;@ContextConfiguration&lt;/code&gt; instructs the spring-test the configuration to use to create the &lt;code&gt;ApplicationContext&lt;/code&gt;. This is no different than using the existing Spring Test support. For additional information, refer to the &lt;a href="http://docs.spring.io/spring-framework/docs/4.0.x/spring-framework-reference/htmlsingle/#testcontext-ctx-management"&gt;Spring Reference&lt;/a&gt;
+&lt;code&gt;@ContextConfiguration&lt;/code&gt; instructs the spring-test the configuration to use to create the &lt;code&gt;ApplicationContext&lt;/code&gt;. Since no configuration is specified, the default configuration locations will be tried. This is no different than using the existing Spring Test support. For additional information, refer to the &lt;a href="http://docs.spring.io/spring-framework/docs/4.0.x/spring-framework-reference/htmlsingle/#testcontext-ctx-management"&gt;Spring Reference&lt;/a&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;code&gt;@TestExecutionListeners&lt;/code&gt; instructs the spring-test module to, in addition to the default listeners, use the &lt;code&gt;WithSecurityContextTestExcecutionListener&lt;/code&gt; which will ensure our tests are ran with the correct user. It does this by populating the &lt;code&gt;SecurityContextHolder&lt;/code&gt; prior to running our tests. After the test is done, it will clear out the &lt;code&gt;SecurityContextHolder&lt;/code&gt;.&lt;/li&gt;
@@ -185,7 +292,7 @@
 &lt;p&gt;Of course it can be a bit tedious placing the annotation on every test method. Instead, we can place the annotation at the class level and every test will use the specified user. For example, the following would run every test with a user with the username "admin", the password "password", and the roles "ROLE_USER" and "ROLE_ADMIN".&lt;/p&gt;
 
 &lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@RunWith&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SpringJUnit4ClassRunner&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="nd"&gt;@ContextConfiguration&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;classes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WithMockUserTests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@ContextConfiguration&lt;/span&gt;
 &lt;span class="nd"&gt;@TestExecutionListeners&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;listeners&lt;/span&gt;&lt;span class="o"&gt;={&lt;/span&gt;&lt;span class="n"&gt;ServletTestExecutionListener&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
     &lt;span class="n"&gt;DependencyInjectionTestExecutionListener&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
     &lt;span class="n"&gt;DirtiesContextTestExecutionListener&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
@@ -1085,66 +1192,6 @@ hand all that's going on and to provide direct feedback. Expect a number of sign
 &lt;p&gt;Thanks again to all the community contributors who helped with this release. Take it for a ride, today!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/1.0.2.RELEASE/reference/htmlsingle/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>DISID to lead Spring Roo Project</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/04/24/disid-to-lead-spring-roo-project" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-04-16:1506</id>
-    <updated>2014-04-24T09:00:00Z</updated>
-    <content type="html">&lt;p&gt;&lt;/p&gt;
-
-&lt;h1&gt;
-&lt;a name="user-content-disid-to-lead-spring-roo-project-" class="anchor" href="#disid-to-lead-spring-roo-project-"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;DISID to lead Spring Roo Project &lt;/h1&gt;
-
-&lt;p&gt;&lt;b&gt;&lt;a href="http://www.disid.com/"&gt;&lt;img src="https://camo.githubusercontent.com/de40308b93a30030a7dd6996ec41f2112865346b/687474703a2f2f7777772e64697369642e636f6d2f696d6167652f6c61796f75745f7365745f6c6f676f3f696d675f69643d313138343126743d31333937363737323034373635" alt="Disid" width="120" height="33" longdesc="http://www.disid.com" data-canonical-src="http://www.disid.com/image/layout_set_logo?img_id=11841&amp;amp;t=1397677204765" style="max-width:100%;"&gt;&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;We are happy to announce that Pivotal and DISID will collaborate on further development of the Spring Roo project. Roo will continue in its goal of providing a code-gen style of RAD framework, focused helping developers get Java projects done on time.&lt;/p&gt;
-
-&lt;p&gt;Pivotal and DISID were already in collaboration around Roo for some time, so we?re excited to be formalizing what originally was an informal, developer led partnership ? a partnership that DISID is committed to.  The Spring Roo project will remain as an open source project under Spring, maintaining the same current licensing policy. Both Pivotal and DISID are calling on the Spring and Java communities for anyone who would like to collaborate in the project with us!&lt;/p&gt;
-
-&lt;p&gt;Learn more at &lt;a href="http://www.disid.com/web/guest/spring-roo"&gt;http://www.disid.com/web/guest/spring-roo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Follow DISID on Twitter &lt;a href="twitter.com/disid_corp"&gt;@disid_corp&lt;/a&gt; for more updates!&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - April 22nd, 2014</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/04/22/this-week-in-spring-april-22nd-2014" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2014-04-22:1535</id>
-    <updated>2014-04-22T15:28:00Z</updated>
-    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I'm in Bangalore, India, for the Great Indian Developer Summit talking to developers about (wait for it..) Spring! I also met with a large system integrator here in Bangalore's Electronic City and addressed a large team of architects and engineers using Spring on projects worldwide. India's an interesting place because so much of their business comes from companies abroad who are trying to get extra help on otherwise overwhelming projects. Naturally, anything that helps get more done, quicker, is of interest here and Spring's a favorite. Needless to say, Spring Boot resonated a lot! It's not all work, though, when the local food is as good as it is here! :)&lt;/p&gt;
-
-&lt;p&gt;Lots of webinars and replays this week -  we've got a lot to cover, so let's get to it! &lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Hadoop hungry? Get ready for a feast - &lt;a href="https://twitter.com/markpollack"&gt;Dr. Mark Pollack&lt;/a&gt; and the XD team have announced that &lt;a href="https://spring.io/blog/2014/04/16/spring-xd-1-0-0-m6-released"&gt;Spring XD 1.0.0 M6 is now available&lt;/a&gt;. This new release has a &lt;em&gt;TON&lt;/em&gt; of new features, including support running on YARN, Zookeeper support for the DIRT distributed runtime, machine-learning algorithms, improved shell tab-completion, a Reactor-powered TCP/UDP source that can do 1M+ tx/sec on cheap hardware, default FTP to HDFS job, and much more! (No, really, &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=11401&amp;amp;version=14323"&gt;we mean that&lt;/a&gt;). This release felt more like they somehow skipped all the 1.0.x milestones and released a "2.0" version! &lt;/li&gt;
-&lt;li&gt;Reactor project lead &lt;a href="http://twitter.com/j_brisbin/status/456791726720430080"&gt;Jon Brisbin&lt;/a&gt; has announced, along with other engineers at Typesafe, Netflix, Twitter, and more, the &lt;a href="http://reactive-streams.org"&gt;new common API for reactive stream processing&lt;/a&gt;. This is &lt;em&gt;huge&lt;/em&gt;!&lt;/li&gt;
-&lt;li&gt;Spring Data lead Oliver Gierke has just announced that &lt;a href="https://spring.io/blog/2014/04/16/second-service-release-for-spring-data-release-train-codd-released"&gt;Spring Data Codd, service release 2, is now available&lt;/a&gt;. This new release is huge, so be sure to check them all out! &lt;/li&gt;
-&lt;li&gt;Dr. Dave Syer has just announced the &lt;a href="https://spring.io/blog/2014/04/18/spring-security-oauth-2-0-0-rc1-available"&gt;release of Spring Security OAuth 2.0.0.RC1&lt;/a&gt;. This project has evolved very quickly, and I've enjoyed updating the code to my talk, &lt;a href="https://github.com/joshlong/the-spring-rest-stack/blob/oauth2rc1/code/web/oauth/src/main/java/com/jl/crm/web/Application.java"&gt;&lt;em&gt;The Spring REST Stack&lt;/em&gt;&lt;/a&gt;, to use the progressively more concise and powerful iterations. I've updated that branch (still updating unit tests) to use Spring Security 2.0.0.RC1. It's a working OAuth-secured REST service that supports HTTP and HTTPS, can run standalone or as a traditional &lt;code&gt;.war&lt;/code&gt;, and uses a custom &lt;code&gt;UserDetailsService&lt;/code&gt; bean and Java 8 lambdas. Not bad! &lt;/li&gt;
-&lt;li&gt;Spring Integration is looking at an incredible new release -- full support for Annotations and Java Configuration + some Spring Boot support! With 4.0, you'll be able to make XML - free integration applications. Project lead Gary Russell taking you through all the new hotness in the webinar, &lt;a href="https://spring.io/blog/2014/04/22/webinar-spring-integration-4-0-the-new-frontier"&gt;&lt;em&gt;Spring Integration 4.0, the new frontier&lt;/em&gt;, on May 13&lt;/a&gt;.  &lt;/li&gt;
-&lt;li&gt;
-&lt;a href="https://spring.io/blog/2014/04/08/webinar-web-application-diagnostics-with-java-and-javascript"&gt;On April 30th, join me and Ashley Puls from New Relic&lt;/a&gt; as we track and trace our way through a Javascript (frontend) and Java/Spring (backend) application.&lt;/li&gt;
-&lt;li&gt;Chris Beams has put together another great post on the Sagan project, &lt;a href="https://spring.io/blog/2014/04/18/project-sagan-upgrading-to-jdk-8"&gt;this one on moving to Java 8&lt;/a&gt;. Check it out!&lt;/li&gt;
-&lt;li&gt;The replay for my recent  talk, &lt;em&gt;Building "Bootiful" Applications with Spring Boot&lt;/em&gt;,  is &lt;a href="http://spring.io/blog/2014/04/16/webinar-replay-building-bootiful-applications-with-spring-boot"&gt;now available on our YouTube channel&lt;/a&gt;. &lt;/li&gt;
-&lt;li&gt;Spring Security lead Rob Winch is back with &lt;em&gt;another&lt;/em&gt; post on advanced Spring MVC test integrations with common third party projects. This post is about &lt;a href="https://spring.io/blog/2014/04/15/spring-mvc-test-with-geb"&gt;testing web applications using Geb&lt;/a&gt;. &lt;/li&gt;
-&lt;li&gt;Spring Data Neo4j lead Michael Hunger and I will  be giving a webinar on the new awesome &lt;a href="https://spring.io/blog/2014/04/22/webinar-data-driven-applications-with-spring-and-neo4j"&gt;in Spring Data Neo4j 3.0 and Neo4j 2.0 on May 20th&lt;/a&gt;. &lt;/li&gt;
-&lt;li&gt;Search on the brain? You have front row seats to 90 minutes with  our former colleague and Spring committer Costin Leau, now at Elasticsearch: &lt;a href="http://spring.io/blog/2014/04/22/springone2gx-2013-replay-your-data-your-search-elasticsearch"&gt;Your Data, Your Search, Elasticsearch&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Don't miss Pivotal's Mike Wiesner as he tackles pragmatic Application Security (beyond just spring security) in this &lt;a href="http://spring.io/blog/2014/04/22/springone2gx-2013-replay-application-security-pitfalls"&gt;SpringOne2GX 2013 Replay: Application Security Pitfalls&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Groovy language lead Guillaume LaForge's epic &lt;a href="http://glaforge.appspot.com/article/groovy-weekly-17?utm_campaign=buffer&amp;amp;utm_content=bufferfe34c&amp;amp;utm_medium=social&amp;amp;utm_source=facebook.com"&gt;&lt;em&gt;Groovy Weekly&lt;/em&gt;&lt;/a&gt; column is coming along nicely! There's always good stuff, and this week's no exception. Check it out if you dig all things Groovy (and Grails).&lt;/li&gt;
-&lt;li&gt;This project, by Alexandre Rafalovitch, aims to improve the SOLR JavaDocs. There's a lot to admire here, but I liked this Spring Boot example which demonstrates a &lt;a href="https://github.com/arafalov/Solr-Javadoc"&gt;REST endpoint connected to a SOLR instance&lt;/a&gt;. Nice! &lt;/li&gt;
-&lt;li&gt;Fabio Maffioletti has put together a very nice post that evolves the discussion on how to use &lt;a href="http://fabiomaffioletti.me/blog/2014/04/15/distributed-transactions-multiple-databases-spring-boot-spring-data-jpa-atomikos/"&gt;JTA with Spring (in particular, with Spring Boot and Spring Data JPA) via Atomikos to coordinate transactions across two different databases&lt;/a&gt;. This post starts with &lt;a href="http://spring.io/blog/2011/08/15/configuring-spring-and-jta-without-full-java-ee/"&gt;an older post I wrote in 2011 on the same topic&lt;/a&gt;, introduces Spring Boot and Spring Data, and changes the example from one database and a JMS broker to a database and another database through JPA. This is really cool! &lt;/li&gt;
-&lt;li&gt;Yuan Ji has been putting together very nice &lt;a href="https://www.jiwhiz.com/#/blogs/5344cb28fcee4dca31893712"&gt;posts on building  HAL-compliant REST services  with Spring HATEOAS&lt;/a&gt;, &lt;a href="https://www.jiwhiz.com/#/blogs/5352ebb8352eb40d58180a55"&gt;unit testing them&lt;/a&gt; and - most recently - consuming those services with &lt;a href="https://www.jiwhiz.com/#/blogs/535588f6352eb40d58180a58"&gt;Angular-HAL&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Our pal Brian Hannaway  is back, this time with a post &lt;a href="http://briansjavablog.blogspot.in/2014/04/spring-batch-tutorial.html"&gt;on building Spring Batch applications&lt;/a&gt;. The content is really good, and worth a read for anybody who wants to love and learn Spring Batch. In the post, Brian demonstrates how to build a Batch application using the XML namespace. Spring Batch also supports a very nice Java configuration API and - with Spring Boot - writing a Spring Batch application can be very concise.  I took Brian's very cool example and wrote  a &lt;a href="https://github.com/joshlong/boot-it-up/tree/master/code/batch"&gt;different version using Spring Boot and the Java configuration API for reference&lt;/a&gt;. Definitely start with Brian's blog, though, as the code in my repository will make little sense otherwise! &lt;/li&gt;
-&lt;li&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content>
   </entry>
 </feed>
 
