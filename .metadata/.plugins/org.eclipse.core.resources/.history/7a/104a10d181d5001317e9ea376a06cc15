@@ -1,0 +1,27 @@
+package test.com.whatever;
+
+public class Combo {
+
+	
+	
+	public static void main(String[] args) {
+		String s = "0ab";
+		String pre ="0";
+		printComb(pre,s)
+	}
+	
+	public static void printComb(String prefix,String str) {
+		if (str.length() == 0) {
+			System.out.println(prefix);
+			return;
+		}
+		if (Character.isAlphabetic(str.charAt(0))) {
+				printComb(prefix+str.substring(0,1).toLowerCase(),str.substring(1));
+				printComb(prefix+str.substring(0,1).toUpperCase(),str.substring(1));
+			}
+			else
+				printComb(prefix+str.substring(0,1),str.substring(1));
+	}
+	
+	
+}

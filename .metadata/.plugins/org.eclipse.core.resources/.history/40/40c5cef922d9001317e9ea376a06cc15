@@ -1,0 +1,9 @@
+'''
+Created on May 11, 2014
+
+@author: toantran
+'''
+from django.db import models
+
+
+class CartItems (models.Model):

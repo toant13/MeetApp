@@ -1,0 +1,6 @@
+'''
+Created on May 11, 2014
+
+@author: toantran
+'''
+class CartItems (models.Model):

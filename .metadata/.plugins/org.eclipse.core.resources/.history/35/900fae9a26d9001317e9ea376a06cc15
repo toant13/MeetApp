@@ -1,0 +1,11 @@
+'''
+Created on May 11, 2014
+
+@author: toantran
+'''
+from django.db import models
+from store import MenuItem
+
+class CartItems (models.Model):
+    item = models.ForeignKey(MenuItem, related_name='cartItem')
+    quantity = models.PositiveSmallIntegerField(default=1, blank=True, null=True)

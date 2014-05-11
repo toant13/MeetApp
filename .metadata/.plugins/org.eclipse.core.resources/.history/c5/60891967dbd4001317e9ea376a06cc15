@@ -1,0 +1,8 @@
+{% if stores %}
+	<ul>
+	{% for store in stores %}
+		<li><a href="/polls/{{ poll.id }}/">{{ poll.question }}</a></li>
+	{% endfor %}
+	</ul>
+
+{% endif %}

@@ -1,0 +1,18 @@
+'''
+Created on May 11, 2014
+
+@author: toantran
+'''
+from django.db import models
+from store import MenuItem, Store
+
+class Cart (models.Model):
+    store = models.ForeignKey(Store, related_name='cartItem')
+    msg_to_store = models.CharField(max_length=160, unique=True)
+    subtotal = models.DecimalField(max_digits=8, decimal_places=2)
+    total = models.DecimalField(max_digits=8, decimal_places=2)
+    deliver_cost = models.DecimalField(max_digits=8, decimal_places=2)
+
+class CartItems (models.Model):
+    item = models.ForeignKey(MenuItem, related_name='cartItem')
+    quantity = models.PositiveSmallIntegerField(default=1, blank=True, null=True)

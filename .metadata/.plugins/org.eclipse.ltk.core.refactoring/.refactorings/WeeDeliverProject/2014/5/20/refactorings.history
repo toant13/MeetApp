@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;WeeDeliverProject/ProviderMenuApp/models/models.py&apos; to &apos;store.py&apos;" description="Rename resource &apos;models.py&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ProviderMenuApp/models/models.py" name="store.py" stamp="1399822261134" updateReferences="true"/>
+</session>

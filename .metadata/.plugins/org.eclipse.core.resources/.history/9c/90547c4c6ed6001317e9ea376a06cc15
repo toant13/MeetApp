@@ -1,0 +1,22 @@
+{% load item_extras %}
+<h2><a href="/">home</a></h2>
+<h1>{{ store.storeName }}</h1>
+
+
+<img src="{{ store.storeAvatar.url }}" width="300"/></br>
+
+<ul>
+{% for category in categories %}
+	{% if category.menuItem %}
+	<li>
+		<h2>{{ category.categoryName }}</h2>
+		{% for item in items|items_in_category:category %}
+			<h3>{{item.name}}</h3>
+			<p>{{item.description}}</p>
+			<p><img src="{{ item.itemImage.url }}" width="300"/></p>
+			<p>{{item.price}}</p>
+		{% endfor %}
+	</li>
+	<% endif %}
+{% endfor %}
+</ul>

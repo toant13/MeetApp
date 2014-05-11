@@ -1,0 +1,38 @@
+'''
+Created on Apr 29, 2014
+
+@author: toantran
+'''
+
+from rest_framework import serializers
+from models import MenuItem, MenuCategory, Store, UserDevice
+
+class StoreSerializer(serializers.ModelSerializer):
+    menuCategory = serializers.RelatedField(many=True)
+    
+    class Meta:
+        model = Store
+        fields = ('storeName', 'menuCategory')
+
+class MenuCategorySerializer(serializers.ModelSerializer):
+    menuItem = serializers.RelatedField(many=True)
+    
+    class Meta:
+        model = MenuCategory
+        fields = ('categoryName', 'store', 'menuItem')
+    
+
+
+class MenuItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MenuItem
+        fields = ('name', 'description', 'price', 'category')
+        
+class DeviceSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = UserDevices
+        fields = ('username', 'password', 'name', 'dev_id', 'reg_id')
+        
+        
+        
+        

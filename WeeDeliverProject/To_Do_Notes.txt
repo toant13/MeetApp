@@ -1,0 +1,16 @@
+-photo name uniqueness check
+-photo updating/deleting
+-change developer templates from default Django Rest Framework templates
+-change get item for rest api error upon logouts
+
+
+Order of features
+-shopping cart (member)
+-shopping cart (guests expires after 30 days)
+-checkout 
+-send message to phones (buyer to seller)
+-send message to phones (seller to site )
+
+notes:
+-checkout flow: guest info or if member already —> payment —> confirmation
+-front end shopping cart. Check out button POSTs json object(s) (create order model?) to store site/sends gcm notification to store affiliated phones.

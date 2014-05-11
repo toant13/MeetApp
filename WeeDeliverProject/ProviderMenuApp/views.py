@@ -173,9 +173,9 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
 def api_root(request, format=None):
     return Response({
 #         'users': reverse('user-list', request=request, format=format),
-        'store': reverse('store-list', request=request, format=format),
-        'category': reverse('menuCategory-list', request=request, format=format),
-        'item': reverse('item-list', request=request, format=format),
+        'Managing Api': reverse('store-list', request=request, format=format),
+        'Category': reverse('menuCategory-list', request=request, format=format),
+        'Item': reverse('item-list', request=request, format=format),
     })    
     
     
