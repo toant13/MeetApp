@@ -5,3 +5,4 @@ RemoteSystemsTempFiles/
 .settings/
 target/
 *.sqlite3
+*.pyc
