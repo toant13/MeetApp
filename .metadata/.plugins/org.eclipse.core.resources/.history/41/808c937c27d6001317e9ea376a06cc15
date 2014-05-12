@@ -1,3 +1,0 @@
-<h1>{{ store.storeName }}</h1>
-
-<p>{{ store.pk}}</p>

@@ -6,12 +6,14 @@ import settings
 admin.autodiscover()
 
 
-user_list = views.UserViewSet.as_view({
+store_user_list = views.StoreUserViewSet.as_view({
     'get': 'list'
 })
-user_detail = views.UserViewSet.as_view({
+store_user_detail = views.StoreUserViewSet.as_view({
     'get': 'retrieve'
 })
+
+
 
 
 # router = DefaultRouter()
@@ -31,11 +33,14 @@ urlpatterns = patterns('',
     url(r'', include('gcm.urls')),
     
     #ADMIN REST URLs
-    url(r'^api/item/$', views.MenuItem_list.as_view(), name='item-list'),
-    url(r'^api/category/$', views.MenuCategory_list.as_view(), name='menuCategory-list'),
-    url(r'^api/device/$', views.Device_list.as_view(), name='device-list'),
-    url(r'^api/users/$', user_list, name='user-list'),
-    url(r'^api/users/(?P<pk>[0-9]+)/$', user_detail, name='user-detail'),
+    url(r'^api/superadmin/item/$', views.MenuItem_list.as_view(), name='item-list'),
+    url(r'^api/superadmin/category/$', views.MenuCategory_list.as_view(), name='menuCategory-list'),
+    url(r'^api/superadmin/device/$', views.Device_list.as_view(), name='device-list'),
+    
+    
+    
+#     url(r'^api/superadmin/users/$', store_user_list, name='store-user-list'),
+#     url(r'^api/superadmin/users/(?P<pk>[0-9]+)/$', store_user_detail, name='store-user-detail'),
    
     #STORE OWNER/USER REST API
     url(r'^api/$', 'ProviderMenuApp.views.api_root'),
@@ -45,9 +50,11 @@ urlpatterns = patterns('',
     url(r'^api/store/(?P<pk>[0-9]+)/category/(?P<catpk>[0-9]+)/$', views.StoreCategory_detail.as_view()),
     url(r'^api/store/(?P<pk>[0-9]+)/category/(?P<catpk>[0-9]+)/item/$', views.StoreCategoryItem_list.as_view()),
     url(r'^api/store/(?P<pk>[0-9]+)/category/(?P<catpk>[0-9]+)/item/(?P<itempk>[0-9]+)/$', views.StoreCategoryItem_detail.as_view()),
-
+    
     #BUYER API
-#     url
+    url(r'^api/users/$', views.BuyerUser_list.as_view(), name='buyer-user-list'),
+    url(r'^api/users/(?P<pk>[0-9]+)/$', views.BuyerUser_Detail.as_view(), name='buyer-user-detail'),
+    url(r'^api/users/(?P<pk>[0-9]+)/carts/$', views.UserCart_list.as_view(), name="user-cart-list"), 
 
     #NONREST URLs
     url(r'^$', views.index, name='index'),

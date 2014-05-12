@@ -1,4 +1,0 @@
-{% if latest_poll_list %}
-
-
-{% endif %}

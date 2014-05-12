@@ -1,8 +1,0 @@
-{% if stores %}
-	<ul>
-	{% for poll in latest_poll_list %}
-	
-	{% endfor %}
-	</ul>
-
-{% endif %}

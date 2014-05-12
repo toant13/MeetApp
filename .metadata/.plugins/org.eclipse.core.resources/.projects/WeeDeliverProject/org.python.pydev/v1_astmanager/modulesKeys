@@ -2,7 +2,9 @@ MODULES_MANAGER_V2
 ProviderMenuApp.MenuSerializer|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/MenuSerializer.py
 ProviderMenuApp.__init__|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/__init__.py
 ProviderMenuApp.admin|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/admin.py
-ProviderMenuApp.models|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/models.py
+ProviderMenuApp.models.__init__|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/models/__init__.py
+ProviderMenuApp.models.buyer|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/models/buyer.py
+ProviderMenuApp.models.store|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/models/store.py
 ProviderMenuApp.permissions|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/permissions.py
 ProviderMenuApp.templatetags.__init__|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/templatetags/__init__.py
 ProviderMenuApp.templatetags.item_extras|/Users/toantran/Documents/Java_development/workspace/MeeterApp_workspace/WeeDeliverProject/ProviderMenuApp/templatetags/item_extras.py

@@ -1,9 +1,0 @@
-{% if stores %}
-	<ul>
-	{% for store in stores %}
-		<li><a href="/stores/{{ store.id }}/">{{ stores.storeName }}</a></li>
-	{% endfor %}
-	</ul>
-{% else %}
-    <p>No store are available.</p>
-{% endif %}

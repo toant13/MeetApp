@@ -1,6 +1,0 @@
-{% if stores %}
-	<ul>
-	
-	</ul>
-
-{% endif %}

@@ -4,6 +4,7 @@ Created on Apr 29, 2014
 @author: toantran
 '''
 
+from ProviderMenuApp.models.buyer import Cart
 from django.contrib.auth.models import User
 from models import MenuItem, MenuCategory, Store, UserDevice
 from rest_framework import serializers
@@ -36,13 +37,24 @@ class DeviceSerializers(serializers.ModelSerializer):
         model = UserDevice
         fields = ('id','username', 'password', 'name', 'dev_id', 'reg_id', 'store')
         
-class UserSerializer(serializers.ModelSerializer):
+class StoreUserSerializer(serializers.ModelSerializer):
     store = serializers.PrimaryKeyRelatedField(many=True)
      
     class Meta:
         model = User
         fields = ('id', 'username', 'store')
-         
+        
+class BuyerUserSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'cart')
+        
+class CartSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cart
+        fields = ('id','owner', 'store', 'msg_to_store', 'subtotal', 'total', 'delivery_cost', 'CartItems')
+            
          
         
         

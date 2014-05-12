@@ -1,6 +1,8 @@
 from ProviderMenuApp.MenuSerializer import MenuItemSerializer, \
-    MenuCategorySerializer, StoreSerializer, DeviceSerializers, UserSerializer
+    MenuCategorySerializer, StoreSerializer, DeviceSerializers, StoreUserSerializer, \
+    BuyerUserSerializer, CartSerializer
 from ProviderMenuApp.models import MenuItem, MenuCategory, Store, UserDevice
+from ProviderMenuApp.models.buyer import Cart
 from ProviderMenuApp.permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly
 from django.contrib.auth.models import User
 from django.http.response import HttpResponse
@@ -157,25 +159,50 @@ class StoreCategoryItem_detail(generics.RetrieveUpdateDestroyAPIView):
         m = MenuCategory.objects.filter(store=pKey, pk=catPK)
         return MenuItem.objects.filter(category=m, pk=itemPK)
     
+class BuyerUser_list(generics.ListCreateAPIView):
+    queryset = User.objects.filter(groups__name="buyers")
+    serializer_class = BuyerUserSerializer
+    permission_classes = (IsAdminOrReadOnly, ) #admin only for now, but will open later
+    
+class BuyerUser_Detail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.filter(groups__name="buyers")
+    serializer_class = BuyerUserSerializer
+    permission_classes = (IsAdminOrReadOnly, ) #admin only for now, but will open later
+    
+class UserCart_list(generics.ListCreateAPIView):
+    queryset = Cart.objects.all()
+    serializer_class = CartSerializer
+    permission_classes = (IsAdminOrReadOnly, ) #admin only for now, but will open later
+
+
+
+
+
+
+
+    
 class Device_list(generics.ListCreateAPIView):
     queryset = UserDevice.objects.all()
     serializer_class = DeviceSerializers
     permission_classes = (permissions.IsAdminUser,)
 
     
-class UserViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class StoreUserViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = User.objects.filter(groups__name="sellers")
+    serializer_class = StoreUserSerializer
     permission_classes = (permissions.IsAdminUser,)
+    
+
     
     
 @api_view(('GET',))
 def api_root(request, format=None):
     return Response({
-#         'users': reverse('user-list', request=request, format=format),
-        'Managing Api': reverse('store-list', request=request, format=format),
-        'Category': reverse('menuCategory-list', request=request, format=format),
-        'Item': reverse('item-list', request=request, format=format),
+#         'Store Users': reverse('store-user-list', request=request, format=format),
+        'Buyer Accounts API': reverse('buyer-user-list', request=request, format=format),
+        'Seller Accounts API': reverse('store-list', request=request, format=format),
+#         'Category': reverse('menuCategory-list', request=request, format=format),
+#         'Item': reverse('item-list', request=request, format=format),
     })    
     
     
