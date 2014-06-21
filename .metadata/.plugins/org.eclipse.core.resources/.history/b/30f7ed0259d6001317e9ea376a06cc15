@@ -1,4 +1,0 @@
-<h1>{{ store.storeName }}</h1>
-
-<p>{{ store.pk}}</p>
-<img src="{{ store.storeAvatar.url }}" width="300"/></br>

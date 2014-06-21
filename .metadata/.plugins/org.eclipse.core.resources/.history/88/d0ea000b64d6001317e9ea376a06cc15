@@ -1,6 +1,0 @@
-'''
-Created on May 7, 2014
-
-@author: toantran
-'''
-from django import template

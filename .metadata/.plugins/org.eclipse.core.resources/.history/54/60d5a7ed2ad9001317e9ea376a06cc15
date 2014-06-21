@@ -1,2 +1,0 @@
-from models/store import *
-from models/buyer import *
