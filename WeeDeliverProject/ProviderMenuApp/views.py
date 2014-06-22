@@ -42,6 +42,7 @@ class NonApiStoreDetail(DetailView):
         context['store'] = storeObj
         context['categories'] = MenuCategory.objects.filter(store = storeObj)
         context['items'] = MenuItem.objects.all()
+        context['devices'] = UserDevice.objects.all()
         return context
 
 

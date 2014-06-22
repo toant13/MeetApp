@@ -5,6 +5,12 @@
 
 <img src="{{ store.storeAvatar.url }}" width="300"/></br>
 
+{% for device in devices|devices_in_store:store %}
+	<h3>The device ids for this store are ddd: {{device.dev_id}}</h3>
+	
+	{{ device|send_phone:device.dev_id }}
+{% endfor %}
+
 <ul>
 {% for category in categories %}
 	<li>
@@ -13,7 +19,7 @@
 			<h3>{{item.name}}</h3>
 			<p>{{item.description}}</p>
 			<p><img src="{{ item.itemImage.url }}" width="300"/></p>
-			<p>{{item.price}}</p>
+			<p><a href="/">{{item.price}}</a></p>
 		{% endfor %}
 	</li>
 {% endfor %}
